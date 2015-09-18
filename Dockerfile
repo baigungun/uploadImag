@@ -18,3 +18,5 @@ COPY ./web /var/www/html/web
 #重启APACHE
 RUN service apache2 restart
 
+#发布端口8080和80
+EXPOSE 80 8080
