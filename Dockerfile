@@ -20,3 +20,6 @@ RUN service apache2 restart
 
 #发布端口8080和80
 EXPOSE 80 8080
+
+#开启服务
+ENTRYPOINT service apache2 start && /usr/sbin/sshd -D
