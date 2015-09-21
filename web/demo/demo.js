@@ -259,8 +259,10 @@ wx.ready(function () {
       }
       var imgs_html=[];
       var i = 0, length = images.localId.length;
+      alert('length：' + length);
       images.serverId = [];
       function upload() {
+          alert("is ing upload");
           wx.uploadImage({
               localId: images.localId[i],
               success: function (res) {
@@ -268,8 +270,8 @@ wx.ready(function () {
                   alert('已上传：' + i + '/' + length);
                   images.serverId.push(res.serverId);
 
-                  imgs_html.push('<img src="'+images.localIds[i]+'"/>');
-                  $("#img_wrap").html(imgs_html.join(''));
+//                  imgs_html.push('<img src="'+images.localIds[i]+'"/>');
+//                  $("#img_wrap").html(imgs_html.join(''));
                   if (i < length) {
                       upload();
                   }
