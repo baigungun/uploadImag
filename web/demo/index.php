@@ -1,7 +1,7 @@
 <?php
 
-$appId = 'YOUR_APPID';
-$appsecret = 'YOUR_APPSECRET';
+$appId = 'wx3b35db305461aa5c';
+$appsecret = 'd638818c2d27fd01b7cafa3b3e97b7f2';
 
 $timestamp = time();
 $jsapi_ticket = make_ticket($appId,$appsecret);
