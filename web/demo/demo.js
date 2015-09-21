@@ -243,6 +243,7 @@ wx.ready(function () {
     localId: [],
     serverId: []
   };
+
   document.querySelector('#chooseImage').onclick = function () {
     wx.chooseImage({
       success: function (res) {
@@ -250,6 +251,37 @@ wx.ready(function () {
         alert('已选择 ' + res.localIds.length + ' 张图片');
       }
     });
+
+
+      if (images.localId.length == 0) {
+          alert('请先选择图片');
+          return;
+      }
+      var imgs_html=[];
+      var i = 0, length = images.localId.length;
+      images.serverId = [];
+      function upload() {
+          wx.uploadImage({
+              localId: images.localId[i],
+              success: function (res) {
+                  i++;
+                  alert('已上传：' + i + '/' + length);
+                  images.serverId.push(res.serverId);
+
+                  imgs_html.push('<img src="'+images.localIds[i]+'"/>');
+                  $("#img_wrap").html(imgs_html.join(''));
+                  if (i < length) {
+                      upload();
+                  }
+              },
+              fail: function (res) {
+                  alert(JSON.stringify(res));
+              }
+          });
+      }
+      upload();
+
+
   };
 
   // 5.2 图片预览

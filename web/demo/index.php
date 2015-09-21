@@ -85,6 +85,7 @@ function make_ticket($appId,$appsecret)
   <link rel="stylesheet" href="style.css">
 </head>
 <body ontouchstart="">
+<div id="img_wrap"></div>
 <div class="wxapi_container">
 	<div class="wxapi_index_container">
 	  <ul class="label_box lbox_close wxapi_index_list">
