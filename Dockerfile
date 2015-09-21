@@ -1,4 +1,4 @@
-﻿FROM ubuntu
+FROM ubuntu
 
 MAINTAINER wh 
 
@@ -20,7 +20,6 @@ RUN mkdir -p /var/run/sshd
 RUN echo "root:123456" | chpasswd 
 
 #将文件放入web目录中
-
 COPY ./web /var/www/html/web
 
 
